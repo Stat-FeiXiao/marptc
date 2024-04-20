@@ -121,10 +121,7 @@ Eqtion = function(gam){
   
 
 
-C <- -diag(N+1)
-D <- rep(0,N+1)
-
-re_esti<-maxLik::maxLik(Loglike, start = rep(0,N+1), method="BFGS", grad = Eqtion, constraints = list(ineqA = C, ineqB = D) )$estimate
+re_esti<-maxLik::maxLik(Loglike, start = rep(0,N+1), method="BFGS", grad = Eqtion )$estimate
 
 re_esti<-as.double(re_esti)
 Fhat <-  F.t.star(Time, re_esti)
