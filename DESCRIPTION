@@ -1,0 +1,31 @@
+Package: geeptc
+Type: Package
+Title: Fit marginal promotion time cure model based on general estimation equations and general estimation equations improved by quadratic inference functions. 
+Version: 1.0.1
+Authors@R: 
+  c(
+  person(given = "Fei",
+         family = "Xiao",
+         role = c("aut", "cre"),
+         email = "stat_xiaofei@hotmail.com"),
+  person(given = "Dipankar",
+         family = "Bandyopadhyay",
+         role = c("aut")
+         ),
+  person(given = "Yi", 
+         family = "Niu", 
+         role = c("aut", "ctb")  
+         )
+  )
+Author: Fei Xiao [aut, cre],
+  Dipankar Bandyopadhyay [ctb],
+  Yi Niu [aut, ctb]
+Maintainer: Fei Xiao <stat_xiaofei@hotmail.com>
+Description: Features the marginal semiparametric promotion time cure model for analyzing clustered survival data with a possible cure fraction.
+License: GPL (>= 2)
+Imports: Matrix, MASS, qif, methods
+Depends: survival
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+URL: http://github.com/Stat-FeiXiao/geeptc
