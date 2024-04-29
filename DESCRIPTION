@@ -1,4 +1,4 @@
-Package: geeptc
+Package: qifptc
 Type: Package
 Title: Fit marginal promotion time cure model based on general estimation equations and general estimation equations improved by quadratic inference functions. 
 Version: 1.0.1
@@ -28,4 +28,4 @@ Depends: survival
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
-URL: http://github.com/Stat-FeiXiao/geeptc
+URL: http://github.com/Stat-FeiXiao/qifptc
