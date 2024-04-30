@@ -27,9 +27,8 @@ qbeta <- function(Time, Status, X,stad,Ibeta,  id, itermax, eps,N,tau,corstr) {
    for (i in 2:ncol(X1)) {
                 stadX[, i] <- (X[, i] - mean(X[, i]))/sd(X[, i])
             }
-  }else{
-    stadX <- X
   }
+  
  beta2 <- beta <- Ibeta
   Fhat <- initialF(Time, Status, stadX, id)$Fhat
 
