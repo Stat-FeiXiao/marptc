@@ -118,18 +118,18 @@ stadX <- X
       Kn_boot <- length(id_boot)
       K_boot <- length(unique(id_boot))
       n_boot <- as.vector(table(id_boot))
-      mf <- model.frame(formula, bootdata)
-      X <- model.matrix(attr(mf, "terms"), mf)
-      X <- as.matrix(X)
-      colnames(X) <- colnames(model.matrix(attr(mf, "terms"), mf))
-      Y <- model.extract(mf, "response")
-      if (!inherits(Y, "Surv"))
+      mf_boot <- model.frame(formula, bootdata)
+      X_boot <- model.matrix(attr(mf_boot, "terms"), mf)
+      X_boot <- as.matrix(X_boot)
+      colnames(X_boot) <- colnames(model.matrix(attr(mf_boot, "terms"), mf_boot))
+      Y_boot <- model.extract(mf_boot, "response")
+      if (!inherits(Y_boot, "Surv"))
         stop("Response must be a survival object")
-      Time <- Y[, 1]
-      Status <- Y[, 2]
+      Time_boot <- Y_boot[, 1]
+      Status_boot <- Y_boot[, 2]
       tryboot <- try(
         withTimeout(
-          qbeta(Time, Status, X,stad,Ibeta,id = id_boot,itermax, eps,N,tau,corstr)
+          qbeta(Time_boot, Status_boot, X_boot,stad,Ibeta,id = id_boot,itermax, eps,N,tau,corstr)
           ,  timeout=50 , onTimeout="error")
         , silent = F)
       if(is(tryboot,"try-error") == FALSE)    break
