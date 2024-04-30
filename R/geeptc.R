@@ -128,11 +128,11 @@ stadX <- X
       X_boot <- model.matrix(attr(mf_boot, "terms"), mf)
       X_boot <- as.matrix(X_boot)
       colnames(X_boot) <- colnames(model.matrix(attr(mf_boot, "terms"), mf_boot))
-      Y <- model.extract(mf_boot, "response")
-      if (!inherits(Y, "Surv"))
+      Y_boot <- model.extract(mf_boot, "response")
+      if (!inherits(Y_boot, "Surv"))
         stop("Response must be a survival object")
-      Time_boot <- Y[, 1]
-      Status_boot <- Y[, 2]
+      Time_boot <- Y_boot[, 1]
+      Status_boot <- Y_boot[, 2]
       tryboot <- try(
         withTimeout(
           gbeta(Time_boot, Status_boot, X_boot,stad,Ibeta,id = id_boot,itermax, eps,N,tau,corstr)
