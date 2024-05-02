@@ -14,12 +14,12 @@ Authors@R:
          ),
   person(given = "Yi", 
          family = "Niu", 
-         role = c("aut", "ctb")  
+         role = c("aut")  
          )
   )
 Author: Fei Xiao [aut, cre],
-  Dipankar Bandyopadhyay [ctb],
-  Yi Niu [aut, ctb]
+  Dipankar Bandyopadhyay [aut],
+  Yi Niu [aut]
 Maintainer: Fei Xiao <stat_xiaofei@hotmail.com>
 Description: Features the marginal semiparametric promotion time cure model for analyzing clustered survival data with a possible cure fraction.
 License: GPL (>= 2)
