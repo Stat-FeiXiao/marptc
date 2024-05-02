@@ -1,10 +1,12 @@
 export(baseF)
 export(gbeta)
 export(geeptc)
+export(print.geeptc)
 export(geq)
 export(initialF)
 export(qbeta)
 export(qifptc)
+export(print.qifptc)
 export(vargee)
 export(varrqif)
 importFrom("stats", "model.extract", "model.frame", "model.matrix",
