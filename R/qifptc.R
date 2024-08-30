@@ -245,14 +245,14 @@ print.qifptc <- function(x, ...) {
 #'   \item{x12}{numeric. \emph{decay_new} Decayed Surfaces -- new.}
 #'   \item{x13}{numeric. \emph{decay_recur} Decayed Surfaces -- recurrent.}
 #'   \item{x14}{numeric. \emph{dfs} Decayed and Filled Surfaces.}
-#'   \item{x15}{factor. \emph{crown} Crown.}
-#'   \item{x16}{factor. \emph{endo} Endodontic Therapy.}
-#'   \item{x17}{factor. \emph{implant} Tooth Implant.}
-#'   \item{x18}{factor. \emph{pontic} Bridge Pontic.}
-#'   \item{x19}{factor. \emph{missing_tooth} Missing Tooth.}
-#'   \item{x20}{factor. \emph{filled_tooth} Filled Tooth.}
-#'   \item{x21}{factor. \emph{decayed_tooth} Decayed Tooth.}
-#'   \item{x22}{factor. \emph{furc_max} Furcation Involvement for Molars.}
+#'   \item{x15}{numeric. \emph{crown} Crown.}
+#'   \item{x16}{numeric. \emph{endo} Endodontic Therapy.}
+#'   \item{x17}{numeric. \emph{implant} Tooth Implant.}
+#'   \item{x18}{numeric. \emph{pontic} Bridge Pontic.}
+#'   \item{x19}{numeric. \emph{missing_tooth} Missing Tooth.}
+#'   \item{x20}{numeric. \emph{filled_tooth} Filled Tooth.}
+#'   \item{x21}{numeric. \emph{decayed_tooth} Decayed Tooth.}
+#'   \item{x22}{numeric. \emph{furc_max} Furcation Involvement for Molars.}
 #'   \item{x23}{numeric. \emph{bleed_ave} Bleeding on Probing (mean percentage).}
 #'   \item{x24}{numeric. \emph{plaque_ave} Plaque Index (mean percentage).}
 #'   \item{x25}{numeric. \emph{pocket_mean_ave} Periodontal Probing Depth (mean of tooth mean).}
@@ -279,10 +279,10 @@ print.qifptc <- function(x, ...) {
 #'   \item{x46}{numeric. \emph{total_tooth} Number of Teeth.}
 #'   \item{x47}{numeric. \emph{dft} Number of Decayed and Filled Teeth.}
 #'   \item{x48}{numeric. \emph{baseline_age} Patient Age at Baseline (years).}
-#'   \item{x49}{factor. \emph{gender} Gender.}
-#'   \item{x50}{factor. \emph{diabetes} Diabetes Mellitus.}
-#'   \item{x51}{factor. \emph{tobacco_ever} Tobacco Use.}
-#'   \item{x52}{logical. \emph{molar} Molar.}
+#'   \item{x49}{numeric. \emph{gender} Gender.}
+#'   \item{x50}{numeric. \emph{diabetes} Diabetes Mellitus.}
+#'   \item{x51}{numeric. \emph{tobacco_ever} Tobacco Use.}
+#'   \item{x52}{numeric. \emph{molar} Molar.}
 #'   \item{id}{numeric. Patient ID.}
 #'   \item{tooth}{numeric. Tooth ID.}
 #'   \item{event}{numeric. Tooth Loss Status.}
