@@ -65,11 +65,10 @@ gqbeta <- function(Time, Status, X,stad, Ibeta, id, itermax, eps,method,corstr) 
 #'
 #' @param lam unknown parameter corresponding to the largrane multiplier.
 #' @param dRbet a matrix needed in this function.
-#' @param delta the censoring indicator, normally 1 = event of interest happens, and 0 = censoring.
 #'
 #' @export getlambda
 
-getlambda <- function(lam,dRbet,delta){
+getlambda <- function(lam,dRbet){
 
   val <- sum(1/(dRbet-lam)) - 1
   return(val)
