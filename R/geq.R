@@ -29,7 +29,7 @@ geq <- function(Time, Status, X, beta, id, eps, corstr) {
   Rbet.min <- min(dRbet)
   interval <- c(Rbet.min-sum(Status),Rbet.min-1)
   lambet <- uniroot(getlambda,interval,tol = .Machine$double.eps^0.75,
-                    dRbet=dRbet,delta=Status)$root
+                    dRbet=dRbet)$root
   
   
   baseF <- sapply(Time,function(tmj){
@@ -132,7 +132,7 @@ geq <- function(Time, Status, X, beta, id, eps, corstr) {
     Rbet.min <- min(dRbet)
     interval <- c(Rbet.min-sum(Status),Rbet.min-1)
     lambet <- uniroot(getlambda,interval,tol = .Machine$double.eps^0.75,
-                      dRbet=dRbet,delta=Status)$root
+                      dRbet=dRbet)$root
     
     
     baseF <- sapply(Time,function(tmj){
