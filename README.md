@@ -1,6 +1,6 @@
 # qifptc
 An R package for fitting marginal semiparametric promotion time cure model under clustered survival data.
-- We consider two marginal methods: *generalized estimating equations*  (**GEE**)  and *quadratic inference functions*   (**QIF**).
+We consider two marginal methods: *generalized estimating equations*  (**GEE**)  and *quadratic inference functions*   (**QIF**).
 
 ## Package description and included main functions
 
