@@ -13,9 +13,8 @@ library(qifptc)
 The main function included in our R package is *qifptc()* and there is also a function *print.qifptc()* for printing fitted results with a better presentation. To sum up, they can be called via:
 - **smgeecure**: fit the models in various ways with synopsis
 ```R
-smgeecure(formula, cureform, data, id, model = c("aft", "ph"),
-          corstr = c("independence", "exchangeable", "ar1"),
-          Var = TRUE, nboot = 100, stdz = TRUE, esmax = 20, eps = 1e-04)
+qifptc(formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FALSE,nboot=100,
+       method = "GEE", corstr="independence",itermax = 100, eps = 1e-06) 
 ```
 - **print.qifptc**: print outputted results from the previous function *qifptc()* with syntax
 ```R
@@ -24,7 +23,7 @@ print.qifptc(fit)
 
 ## Two numerical illustrations
 
-### An example using a real dataset from TCGA program is shown below:
+### An example using a periodontal disease data is shown below:
 
 ```R
 ## library
@@ -33,26 +32,23 @@ library(CureAuxSP)
 
 #### Data preparation
 ```R
-data(tonsil)
-tonsil <- tonsil[-c(141,136,159),]
-tonsil$Sex <- ifelse(tonsil$Sex == 1, 0, 1) # 1="Female"
-tonsil$Cond <- ifelse(tonsil$Cond == 1, 0, 1) # 0=no disability
-tonsil$T <- ifelse(tonsil$T < 4, 0, 1)
-tonsil$Grade2 <- ifelse(tonsil$Grade==2,1,0)
-tonsil$Grade3 <- ifelse(tonsil$Grade==3,1,0)
-table(tonsil$Inst)
+data(Teeth)
+Teeth$Mg <- Teeth$x10 # 1 for Mucogingival defect
+Teeth$Endo <- Teeth$x16 # 1 for endo Therapy
+Teeth$Decay <- Teeth$x21 # 1 for decayed tooth
+Teeth$Gender <- Teeth$x49 # 1 for female
 ```
 
 ## plot a figure to show the existence of a cure fraction
 ```R
-plot(
-  survival::survfit(survival::Surv(yobs, delta) ~ 1, data = sdata.TCGA), 
-  conf.int = T, mark.time = TRUE, lwd = 2,
-  ylab = "Survival Probability", xlab = "Survival Time (in Years)", 
-  xlim = c(0,25), ylim = c(0,1)
+ggsurvplot(survival::survfit(survival::Surv(time, event) ~ x49, data = Data), 
+           ylim = c(0.6,1),
+           ylab = "Survival Probability", xlab = "Survival Time (in Years)", 
+           censor.shape="+",
+           legend.title = "Gender",
+           legend.labs = c("Female","Male")
 )
 ```
-![Figure_Tonsil_KM_SexTumorsize](https://github.com/user-attachments/assets/7874b5c8-46ea-4235-af6b-6e6e49c592ac)
 
 
 #### Fit the marginal semi-parametric promotion time cure model using GEE method
