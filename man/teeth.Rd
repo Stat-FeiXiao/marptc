@@ -2,13 +2,13 @@
 \alias{teeth}
 \docType{data}
 
-\title{Tooth Loss Data}
+\title{A Periodontal Disease Data}
 
 \description{
   Survival of teeth with various predictors.
 }
 
-\usage{data("teeth")}
+\usage{data(teeth)}
 
 \format{
   A data frame with 65,890 teeth on the following 56 variables.
@@ -74,10 +74,6 @@
 
 \details{
   The original data consist of 65228 people enrolled in a study to investigate the association between the time of tooth loss from patients with periodontal disease and its relative covariates. The data is collected from patients treated at Creighton University School of Dentistry from August 2007 until March 2013.
-}
-
-\examples{
-data(teeth)
 }
 
 \keyword{datasets}
