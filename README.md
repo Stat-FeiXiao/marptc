@@ -21,9 +21,7 @@ qifptc(formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FALSE,nboot=100
 print.qifptc(fit)
 ```
 
-## Two numerical illustrations
-
-### An example using a periodontal disease data is shown below:
+## An example using a periodontal disease data is shown below:
 
 ```R
 ## library
@@ -59,7 +57,6 @@ ggsurvplot(survival::survfit(survival::Surv(time, event) ~ Gender, data = Data),
 ```
 ![Teeth_KM_Gender](https://github.com/user-attachments/assets/e5fd1984-d3c6-4b55-a40b-43d631ec7b29)
 
-formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FALSE,nboot=100, method = "GEE", corstr="independence",itermax = 100, eps = 1e-06) {
 
 #### Fit the marginal semi-parametric promotion time cure model using GEE method
 - exchangeable correlation
