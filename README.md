@@ -52,7 +52,7 @@ ggsurvplot(survival::survfit(survival::Surv(time, event) ~ Gender, data = Data),
            ylab = "Survival Probability", xlab = "Survival Time (in Years)", 
            censor.shape="+",
            legend.title = "Gender",
-           legend.labs = c("Female","Male")
+           legend.labs = c("Male","Female")
 )
 ```
 ![Teeth_KM_Gender](https://github.com/user-attachments/assets/e5fd1984-d3c6-4b55-a40b-43d631ec7b29)
