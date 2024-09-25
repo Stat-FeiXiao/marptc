@@ -162,7 +162,7 @@ qifptc <- function(formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FAL
     if(method=="GEE"){
       fit$boots_rho_var<- var(BMnus)
       fit$boots_rho_sd <- sd(BMnus)
-      fit$boots_rho_zvalue <- fit$rho/fit$sd_rho_boots
+      fit$boots_rho_zvalue <- fit$rho/fit$boots_rho_sd
       fit$boots_rho_pvalue <- (1 - pnorm(abs(fit$boots_rho_zvalue))) * 2
     }
 }
