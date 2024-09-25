@@ -217,21 +217,19 @@ print.qifptc <- function(x, ...) {
   cat("Estimation method:", x$method)
   cat("\n")
   if (x$method == "GEE"){
-  cat("\nEstimated Correlation Parameters:\n")
+  cat("\nEstimation of Correlation Parameters:\n")
   if (x$boots) {
-    hatr <- array(0, c(1, 4))
+    hatr <- array(x$rho, c(1, 4))
     rownames(hatr) <- "rho"
     colnames(hatr) <- c("Estimate", "Std.Error", "Z value", "Pr(>|Z|)")
-    hatr[, 1] <- x$rho
     hatr[, 2] <- x$boots_rho_sd
     hatr[, 3] <- x$boots_rho_zvalue
     hatr[, 4] <- x$boots_rho_pvalue
   }
   else {
-    hatr <- array(0, c(2, 1))
+    hatr <- array(x$rho, c(1, 1))
     rownames(hatr) <- "rho"
     colnames(hatr) <- "Estimate"
-    hatr[, 1] <- x$rho
   }
   print(hatr)
   cat("\n")
