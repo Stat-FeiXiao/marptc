@@ -4,7 +4,7 @@
 #' in the working correlation structure is given.
 #'
 #' @param Time right censored data which is the follow up time.
-#' @param Status the censoring indicator, normally 0 = event of interest happens, and 0 = censoring
+#' @param Status the censoring indicator, normally 1 = event of interest happens, and 0 = censoring
 #' @param X a matrix of covariates that may have effect on the failure times.
 #' @param stad if it is TRUE, all the covariates in the \code{formula} are standardized.
 #' @param Ibeta the initial value of the covariate coefficients.
