@@ -11,7 +11,7 @@ library(qifptc)
 ```
 
 The main function included in our R package is *qifptc()* and there is also a function *print.qifptc()* for printing fitted results with a better presentation. To sum up, they can be called via:
-- **smgeecure**: fit the models in various ways with synopsis
+- **qifptc**: fit the models in various ways with synopsis
 ```R
 qifptc(formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FALSE,nboot=100,
        method = "GEE", corstr="independence",itermax = 100, eps = 1e-06) 
