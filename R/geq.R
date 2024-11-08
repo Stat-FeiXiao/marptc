@@ -57,7 +57,6 @@ geq <- function(Time, Status, X, beta, id, eps, corstr, itermax) {
   res <- t(res)
   if(corstr=="independence"){
     rho <- 0
-    pphi <- 1
   }else if(corstr=="exchangeable"){
     for (i in 1:K) {
       if (n[i] == 1){
