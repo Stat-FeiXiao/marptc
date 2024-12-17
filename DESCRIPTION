@@ -1,4 +1,4 @@
-Package: qifptc
+Package: marptc
 Type: Package
 Title: Fit the marginal promotion time cure model based on general estimation equations and general estimation equations improved by quadratic inference functions
 Version: 1.0.1
@@ -36,4 +36,4 @@ Encoding: UTF-8
 LazyData: TRUE
 NeedsCompilation: no
 RoxygenNote: 7.2.3
-URL: http://github.com/Stat-FeiXiao/qifptc
+URL: http://github.com/Stat-FeiXiao/marptc
