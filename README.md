@@ -1,4 +1,4 @@
-# qifptc
+# marptc
 An R package for fitting marginal semiparametric promotion time cure model under clustered survival data.
 We consider two marginal methods: *generalized estimating equations*  (**GEE**)  and *quadratic inference functions*   (**QIF**).
 
@@ -6,19 +6,19 @@ We consider two marginal methods: *generalized estimating equations*  (**GEE**) 
 
 Installation of this package can be done locally after downloading the package manually from this github website. We will also upload this package to the Comprehensive R Archive Network (CRAN) so that it can be downloaded as a standard R package. Currently, it can be loaded using R command
 ```R
-devtools::install_github("Stat-FeiXiao/qifptc")
-library(qifptc)
+devtools::install_github("Stat-FeiXiao/marptc")
+library(marptc)
 ```
 
-The main function included in our R package is *qifptc()* and there is also a function *print.qifptc()* for printing fitted results with a better presentation. To sum up, they can be called via:
-- **qifptc**: fit the models in various ways with synopsis
+The main function included in our R package is *marptc()* and there is also a function *print.marptc()* for printing fitted results with a better presentation. To sum up, they can be called via:
+- **marptc**: fit the models in various ways with synopsis
 ```R
-qifptc(formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FALSE,nboot=100,
+marptc(formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FALSE,nboot=100,
        method = "GEE", corstr="independence",itermax = 100, eps = 1e-06) 
 ```
-- **print.qifptc**: print outputted results from the previous function *qifptc()* with syntax
+- **print.marptc**: print outputted results from the previous function *marptc()* with syntax
 ```R
-print.qifptc(fit)
+print.marptc(fit)
 ```
 
 ## An example using a periodontal disease data is shown below:
@@ -61,50 +61,50 @@ ggsurvplot(survival::survfit(survival::Surv(time, event) ~ Gender, data = Data),
 #### Fit the marginal semi-parametric promotion time cure model using GEE method
 - exchangeable correlation
 ```R
-teeth.gee.ex <- qifptc(
+teeth.gee.ex <- marptc(
         formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "GEE", corstr="exchangeable", data = Data
 )
-print.qifptc(teeth.gee.ex)
+print.marptc(teeth.gee.ex)
 ```
 - AR(1) correlation
 ```R
-teeth.gee.ar1 <- qifptc(
+teeth.gee.ar1 <- marptc(
         formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "GEE", corstr="AR1", data = Data
 )
-print.qifptc(teeth.gee.ar1)
+print.marptc(teeth.gee.ar1)
 ```
 - independence correlation
 ```R
-teeth.gee.ind <- qifptc(
+teeth.gee.ind <- marptc(
         formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "GEE", corstr="independence", data = Data
 )
-print.qifptc(teeth.gee.ind)
+print.marptc(teeth.gee.ind)
 ```
 #### Fit the marginal semi-parametric promotion time cure model using QIF method
 - exchangeable correlation
 ```R
-teeth.qif.ex <- qifptc(
+teeth.qif.ex <- marptc(
         formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "QIF", corstr="exchangeable", data = Data
 )
-print.qifptc(teeth.qif.ex)
+print.marptc(teeth.qif.ex)
 ```
 - AR(1) correlation
 ```R
-teeth.qif.ar1 <- qifptc(
+teeth.qif.ar1 <- marptc(
         formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "QIF", corstr="AR1", data = Data
 )
-print.qifptc(teeth.qif.ar1)
+print.marptc(teeth.qif.ar1)
 ```
 - independence correlation
 ```R
-teeth.qif.ind <- qifptc(
+teeth.qif.ind <- marptc(
         formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "QIF", corstr="independence", data = Data
 )
-print.qifptc(teeth.qif.ind)
+print.marptc(teeth.qif.ind)
 ```
