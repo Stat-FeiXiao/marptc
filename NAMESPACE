@@ -1,9 +1,9 @@
 export(geq)
 export(getlambda)
 export(gqbeta)
-export(print.qifptc)
+export(print.marptc)
 export(qeq)
-export(qifptc)
+export(marptc)
 export(vargee)
 export(varqif)
 importFrom("stats", "model.extract", "model.frame", "model.matrix",
@@ -14,4 +14,4 @@ importFrom("Matrix", "bdiag")
 importFrom("R.utils", "withTimeout")
 import("survival")
 
-S3method(print, qifptc)
+S3method(print, marptc)
