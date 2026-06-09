@@ -31,18 +31,11 @@ library(survminer)
 #### Data preparation
 ```R
 data(teeth)
-n <- 9
-id1 <- as.numeric(names(table(teeth$id)))[as.numeric(table(teeth$id))==n]
-K <- sum(as.numeric(table(teeth$id))==n)
-Data <- teeth[teeth$id==id1[1],]
-for(i in 2:K){
-  Data <- rbind(Data,teeth[teeth$id==id1[i],]) 
-}
-Data $ id <- rep(1:K,each=n)
-Data$Mg <- Data$x10 # 1 for Mucogingival defect
-Data$Endo <- Data$x16 # 1 for endo Therapy
-Data$Decay <- Data$x21 # 1 for decayed tooth
-Data$Gender <- Data$x49 # 1 for female
+Data <- teeth
+Data$DF <- Data$x14 # the number of decayed and filled sites, per tooth
+Data$Crown <- Data$x15 # tooth has crown (0 = yes, 1 = no)
+Data$Gender <- Data$x49 # Gender (0=female, 1=male)
+Data$Tobacco <- Data$x51 # use of tobacco (0=yes, 1=no)
 ```
 
 ## plot a figure to show the existence of a cure fraction
