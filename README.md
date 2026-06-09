@@ -1,4 +1,4 @@
-[KM.pdf](https://github.com/user-attachments/files/28768403/KM.pdf)# marptc
+# marptc
 An R package for fitting marginal semiparametric promotion time cure model under clustered survival data.
 We consider two marginal methods: *generalized estimating equations*  (**GEE**)  and *quadratic inference functions*   (**QIF**).
 
