@@ -1,4 +1,4 @@
-# marptc
+[KM.pdf](https://github.com/user-attachments/files/28768403/KM.pdf)# marptc
 An R package for fitting marginal semiparametric promotion time cure model under clustered survival data.
 We consider two marginal methods: *generalized estimating equations*  (**GEE**)  and *quadratic inference functions*   (**QIF**).
 
@@ -40,16 +40,13 @@ Data$Tobacco <- Data$x51 # use of tobacco (0=yes, 1=no)
 
 ## plot a figure to show the existence of a cure fraction
 ```R
-ggsurvplot(survival::survfit(survival::Surv(time, event) ~ Gender, data = Data), 
+ggsurvplot(survival::survfit(survival::Surv(time, event) ~ 1, data = teeth), 
            ylim = c(0.6,1),
            ylab = "Survival Probability", xlab = "Survival Time (in Years)", 
-           censor.shape="+",
-           legend.title = "Gender",
-           legend.labs = c("Male","Female")
+           censor.shape="+"
 )
 ```
-![Teeth_KM_Gender](https://github.com/user-attachments/assets/e5fd1984-d3c6-4b55-a40b-43d631ec7b29)
-
+[KM.pdf](https://github.com/user-attachments/files/28768406/KM.pdf)
 
 #### Fit the marginal semi-parametric promotion time cure model using GEE method
 - exchangeable correlation
