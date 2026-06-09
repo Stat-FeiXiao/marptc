@@ -11,7 +11,7 @@ importFrom("stats", "model.extract", "model.frame", "model.matrix",
 importFrom("methods", "is")
 importFrom("MASS", "ginv")
 importFrom("Matrix", "bdiag")
-importFrom("R.utils", "withTimeout")
+importFrom("R.utils", "withTimeout", "doRNG")
 import("survival")
 
 S3method(print, marptc)
