@@ -46,7 +46,7 @@ ggsurvplot(survival::survfit(survival::Surv(time, event) ~ 1, data = teeth),
            censor.shape="+"
 )
 ```
-[KM.pdf](https://github.com/user-attachments/files/28768406/KM.pdf)
+![KM.pdf](https://github.com/user-attachments/files/28768406/KM.pdf)
 
 #### Fit the marginal semi-parametric promotion time cure model using GEE method
 - exchangeable correlation
