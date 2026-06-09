@@ -13,8 +13,8 @@ library(marptc)
 The main function included in our R package is *marptc()* and there is also a function *print.marptc()* for printing fitted results with a better presentation. To sum up, they can be called via:
 - **marptc**: fit the models in various ways with synopsis
 ```R
-marptc(formula, data, id, Var = TRUE,Ibeta=NULL, stad=TRUE,boots=FALSE,nboot=100,
-       method = "GEE", corstr="independence",itermax = 100, eps = 1e-06) 
+marptc(formula, data, id, Var = TRUE, Ibeta = NULL, stad = TRUE, boots = FALSE, 
+       nboot = 100, method = "GEE", corstr = "independence", IC = FALSE, itermax = 100, eps = 1e-06) 
 ```
 - **print.marptc**: print outputted results from the previous function *marptc()* with syntax
 ```R
@@ -52,7 +52,7 @@ ggsurvplot(survival::survfit(survival::Surv(time, event) ~ 1, data = teeth),
 - exchangeable correlation
 ```R
 teeth.gee.ex <- marptc(
-        formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
+        formula = Surv(time, event) ~ DF + Crown + Gender + Tobacco, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "GEE", corstr="exchangeable", data = Data
 )
 print.marptc(teeth.gee.ex)
@@ -60,7 +60,7 @@ print.marptc(teeth.gee.ex)
 - AR(1) correlation
 ```R
 teeth.gee.ar1 <- marptc(
-        formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
+        formula = Surv(time, event) ~ DF + Crown + Gender + Tobacco, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "GEE", corstr="AR1", data = Data
 )
 print.marptc(teeth.gee.ar1)
@@ -68,7 +68,7 @@ print.marptc(teeth.gee.ar1)
 - independence correlation
 ```R
 teeth.gee.ind <- marptc(
-        formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
+        formula = Surv(time, event) ~ DF + Crown + Gender + Tobacco, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "GEE", corstr="independence", data = Data
 )
 print.marptc(teeth.gee.ind)
@@ -77,7 +77,7 @@ print.marptc(teeth.gee.ind)
 - exchangeable correlation
 ```R
 teeth.qif.ex <- marptc(
-        formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
+        formula = Surv(time, event) ~ DF + Crown + Gender + Tobacco, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "QIF", corstr="exchangeable", data = Data
 )
 print.marptc(teeth.qif.ex)
@@ -85,7 +85,7 @@ print.marptc(teeth.qif.ex)
 - AR(1) correlation
 ```R
 teeth.qif.ar1 <- marptc(
-        formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
+        formula = Surv(time, event) ~ DF + Crown + Gender + Tobacco, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "QIF", corstr="AR1", data = Data
 )
 print.marptc(teeth.qif.ar1)
@@ -93,7 +93,7 @@ print.marptc(teeth.qif.ar1)
 - independence correlation
 ```R
 teeth.qif.ind <- marptc(
-        formula = Surv(time, event) ~ Gender + Mg + Endo + Decay, 
+        formula = Surv(time, event) ~ DF + Crown + Gender + Tobacco, 
         id = Data$id, Var = TRUE, stad=TRUE, method = "QIF", corstr="independence", data = Data
 )
 print.marptc(teeth.qif.ind)
