@@ -38,7 +38,7 @@ Data$Gender <- Data$x49 # Gender (0=female, 1=male)
 Data$Tobacco <- Data$x51 # use of tobacco (0=yes, 1=no)
 ```
 
-## plot a figure to show the existence of a cure fraction
+#### plot a figure to show the existence of a cure fraction
 ```R
 ggsurvplot(survival::survfit(survival::Surv(time, event) ~ 1, data = teeth), 
            ylim = c(0.6,1),
